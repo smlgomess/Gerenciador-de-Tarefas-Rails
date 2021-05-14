@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tarefas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Status</th>
+      <th>Descrição</th>     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tarefas.each do |tarefa| %>
+      <tr>
+        <td><%= tarefa.titulo %></td>
+        <td><%= tarefa.status %></td>
+        <td><%= tarefa.descricao %></td>  
+        <td><%= link_to 'Visualizar', tarefa %></td>
+        <td><%= link_to 'Editar', edit_tarefa_path(tarefa) %></td>
+        <td><%= link_to 'Remover', tarefa, method: :delete, data: 
+        { confirm: 'Deseja realmente remover esta tarefa?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Criar Tarefa', new_tarefa_path %> </br>
+<%= link_to 'voltar', root_path %>

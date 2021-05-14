@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buscar tarefas por status</h1>
+
+<%= form_tag(listar_index_path , :method => "get") do %>
+    <%= label_tag(:status, "Digite o Status:")%> <br />
+    <%= text_field_tag(:status) %> <br /><br />
+    <%= submit_tag("Buscar") %>
+  
+<% end %>
+
+<%= link_to 'voltar', root_path %>

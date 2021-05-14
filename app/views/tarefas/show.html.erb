@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Tarefa: <%= @tarefa.titulo %></h2>
+
+<ul>
+  <li>Descrição: <%= @tarefa.descricao %></li>
+  <li>Status: <%= @tarefa.status %></li>  
+</ul>
+
+<%= link_to 'Editar tarefa', edit_tarefa_path(@tarefa) %> </br>
+<%= link_to 'voltar', tarefas_path %>
